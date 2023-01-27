@@ -13,7 +13,7 @@ c_sec = "da5a2e5423e14b7293ecc917fdc43ce9"
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=c_id,
                                                client_secret=c_sec,
                                                redirect_uri = "http://localhost:8080",                              
-                                               scope=['user-library-read', 'app-remote-control', 'playlist-modify-public']))
+                                               scope=['user-library-read','user-read-private', 'app-remote-control', 'playlist-modify-public']))
 
 
 st.markdown("<h1 align='center'>MusiCurator", unsafe_allow_html=True)
