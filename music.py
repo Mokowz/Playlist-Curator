@@ -42,7 +42,7 @@ def playlist_info():
 # Get recommendations based on artist's name, song or genre
 def get_recommendation():
     artist = input("Enter an artist of your choice: ")
-    song = input("Enter a song that you love: ")
+    # song = input("Enter a song that you love: ")
     genre = input("Enter the genre for the playlist: ")
 
 
@@ -52,14 +52,15 @@ def get_recommendation():
     artist_id = artist['id']
 
     # Search for a song
-    song_results = sp.search(q='track:' + song,type='track')
-    song = song_results['tracks']['items'][0]
-    song_id = song['id']
+    # song_results = sp.search(q='track:' + song,type='track')
+    # song = song_results['tracks']['items'][0]
+    # song_id = song['id']
     
     # Genre
     genre = genre.lower()
     
-    results = sp.recommendations(seed_artists=[artist_id], seed_tracks=[song_id], seed_genres=[genre])
+    # seed_tracks=[song_id],
+    results = sp.recommendations(seed_artists=[artist_id],  seed_genres=[genre])
     
     tracks_uri = [track["uri"] for track in results["tracks"]]
     
