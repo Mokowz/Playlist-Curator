@@ -2,6 +2,8 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
 import streamlit as st
+import webbrowser
+
 
 st.set_page_config(page_title="MusiCurator - Curated Playlists for Music Lovers", page_icon="musical_note")
 
@@ -10,10 +12,22 @@ st.set_page_config(page_title="MusiCurator - Curated Playlists for Music Lovers"
 c_id = "a3a7f70023c24444a54c0946ba55ddbb"
 c_sec = "da5a2e5423e14b7293ecc917fdc43ce9"
 
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=c_id,
-                                               client_secret=c_sec,
-                                               redirect_uri = "http://localhost:8080",                              
-                                               scope=['user-library-read', 'app-remote-control', 'playlist-modify-public']))
+sp_oauth = SpotifyOAuth(client_id=c_id,
+                        client_secret=c_sec,
+                        redirect_uri = "http://localhost:8000/callback",                              
+                        scope=['user-library-read', 'app-remote-control', 'playlist-modify-public'])
+
+# redirected_url = 'https://example.com/redirect'
+# webbrowser.open(redirected_url)
+
+token = sp_oauth.get_access_token()
+
+sp = spotipy.Spotify(auth_manager=sp_oauth)
+
+# sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=c_id,
+#                                                client_secret=c_sec,
+#                                                redirect_uri = "http://localhost:8000/callback",                              
+#                                                scope=['user-library-read', 'app-remote-control', 'playlist-modify-public']))
 
 
 st.markdown("<h1 align='center'>MusiCurator", unsafe_allow_html=True)
