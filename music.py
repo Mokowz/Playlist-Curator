@@ -12,6 +12,7 @@ st.set_page_config(page_title="MusiCurator - Curated Playlists for Music Lovers"
 c_id = "a3a7f70023c24444a54c0946ba55ddbb"
 c_sec = "da5a2e5423e14b7293ecc917fdc43ce9"
 
+<<<<<<< HEAD
 sp_oauth = SpotifyOAuth(client_id=c_id,
                         client_secret=c_sec,
                         redirect_uri = "http://localhost:8000/callback",                              
@@ -28,6 +29,12 @@ sp = spotipy.Spotify(auth_manager=sp_oauth)
 #                                                client_secret=c_sec,
 #                                                redirect_uri = "http://localhost:8000/callback",                              
 #                                                scope=['user-library-read', 'app-remote-control', 'playlist-modify-public']))
+=======
+# sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=c_id,
+#                                                client_secret=c_sec,
+#                                                redirect_uri = "http://localhost:8080",                              
+#                                                scope=['user-library-read','user-read-private', 'app-remote-control', 'playlist-modify-public']))
+# >>>>>>> 03d315981827a119b011a96ef5b95e8c57c3eb08
 
 
 st.markdown("<h1 align='center'>MusiCurator", unsafe_allow_html=True)
