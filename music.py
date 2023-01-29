@@ -21,7 +21,8 @@ sp_oauth = SpotifyOAuth(client_id=c_id,
 # redirected_url = 'https://example.com/redirect'
 # webbrowser.open(redirected_url)
 
-token = sp_oauth.get_access_token()
+# token = sp_oauth.get_access_token()
+token = "BQDCAzNG1MJbEfKg0fTUBvNsaIJuj2zGYkpj4z3aNxM1KAt7DUBMlm6JENwhghJ4gzRq8cDqaxaAcwtHiokWxFE-DF3F6xrFRGZv3SUkn7I_lcSH3dAB7FtwDwtwhNfzqJWcKrPQ3flTeBTk3O_ts7yU_5gy4_BHfMZEcuIMqomSWonlIdG2bOJ4Ra0g1m5hLVda"
 
 sp = spotipy.Spotify(auth_manager=sp_oauth)
 
